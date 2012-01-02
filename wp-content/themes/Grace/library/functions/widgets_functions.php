@@ -449,7 +449,9 @@ class OtherCategory1 extends WP_Widget {
                 <li class="clearfix">
                     
                     <?php if ( get_post_meta($post->ID,'image', true) ) { ?>
-                              <a class="widget-title" href="<?php the_permalink(); ?>"> <img src="<?php echo bloginfo('template_url'); ?>/thumb.php?src=<?php echo get_post_meta($post->ID, "image", $single = true); ?>&amp;h=58&amp;w=58&amp;zc=1&amp;q=80<?php echo $thumb_url;?>" alt="<?php the_title(); ?>"    /></a>   
+                              <a class="widget-title" href="<?php the_permalink(); ?>"> 
+                                  <img src="<?php echo get_post_meta($post->ID, "image", $single = true); ?>" alt="<?php the_title(); ?>" height="60" width="60"/>
+                              </a>
     					   <?php } ?>
               
                 	<h4><a class="widget-title" href="<?php the_permalink(); ?>"><?php the_title(); ?> </a>   </h4>

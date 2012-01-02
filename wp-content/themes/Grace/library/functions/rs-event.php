@@ -38,10 +38,10 @@ $rs_event_defaults = array
 	"date_format"   => "jS M y",
 	"time_format"   => "H:i",
 	"time_separator"=> "at ",	// 0.9.6: from Nudnik -  Separator between date and time - trailing space reccommended
-	"event_html"    => "<a href='%URL%'>%TITLE%</a><span>%DATE% %TIME%</span>",
+	"event_html"    => "<a href='%URL%'>%TITLE%</a>",
 	"max_events"    => "4",
 	"group_by_date" => 0,
-	"no_events_msg" => "No upcoming events.",
+	"no_events_msg" => "No hay eventos registrados.",
 	"sort_order"    => "ASC",
 	"category"      => 0,
 );
@@ -244,7 +244,7 @@ function rs_event_list($args = array())
 	$lower_time = floor($lower_time / 86400) * 86400;
 	$upper_time = floor($upper_time / 86400) * 86400;
 
-	$where_category_clause = (0 == $category) ? '' : 'AND cats.term_taxonomy_id = '.$wpdb->escape(stripslashes($category)); // 0.9.6: from LivingOS - Allow for WP 2.3
+	$where_category_clause = (0 == $values["category"]) ? '' : 'AND cats.term_taxonomy_id = '.$wpdb->escape(stripslashes($category)); // 0.9.6: from LivingOS - Allow for WP 2.3
 
 	/*** Modified in 0.6.3 - only select published posts ***/
 	/*** 0.9 - don't show postdated posts, grab excerpt, DISTINCT modifier if no category restriction ***/
@@ -288,7 +288,7 @@ function rs_event_list($args = array())
 	$output_array = array();
 
 	/*** If the query has returned an array, do stuff */
-	if(is_array($event_list))
+	if(is_array($event_list) && sizeof($event_list) > 0)
 	{
 		/*** To store previous dates if we have $group_by_date turned on */
 		$previous_date = false;
@@ -364,12 +364,15 @@ function rs_event_list($args = array())
 		}
 	}
 	/*** If no array returned, say nothing */
-	else { $output_array[] = $no_events_msg; }
+	else { $output_array[] = $rs_event_defaults["no_events_msg"]; }
 
 	/*** Now output the array */
 	echo "<ul><li>".implode("</li><li>", $output_array)."</li></ul>";
 
 } // end rs_event_list
+
+
+
 
 
 

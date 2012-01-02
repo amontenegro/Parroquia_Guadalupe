@@ -45,8 +45,6 @@
     <?php if(have_posts()) : ?>
     <?php while(have_posts()) : the_post() ?>
     
-  
-    
     
     <div id="post-<?php the_ID(); ?>" class="posts clearfix page">
       <div class="post_top">
@@ -76,7 +74,7 @@
          
         
          <?php if ( get_post_meta($post->ID,'image', true) ) { ?>
-       <div class="post_img clearfix"> <img src="<?php echo bloginfo('template_url'); ?>/thumb.php?src=<?php echo get_post_meta($post->ID, "image", $single = true); ?>&amp;w=300&amp;zc=1&amp;q=80<?php echo $thumb_url;?>" alt="<?php the_title(); ?>"    />   
+          <div class="post_img clearfix"> <img src="<?php echo get_post_meta($post->ID, "image", $single = true); ?>" alt="<?php the_title(); ?>" width="100"   />
          </div>
          <?php } ?>
         
