@@ -49,6 +49,7 @@ Author Archives&nbsp;|&nbsp;
 <?php } ?>
 <?php } ?>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" media="screen" />
+
 <?php if ( get_option('bizzthemes_favicon') <> "" ) { ?>
 <link rel="icon" type="image/png" href="<?php echo get_option('bizzthemes_favicon'); ?>" />
 <?php } ?>
@@ -71,31 +72,60 @@ Author Archives&nbsp;|&nbsp;
 <?php if ( get_option('bizzthemes_customcss') ) { ?>
 <link href="<?php bloginfo('template_directory'); ?>/custom.css" rel="stylesheet" type="text/css">
 <?php } ?>
+
+<?php if ( is_single() ) { ?>
+<!-- include CSS always before including js -->
+<link rel="stylesheet" type="text/css" href="./wp-content/themes/Grace/library/tn3/skins/tn3/tn3.css" media="screen" />
+<!-- include jQuery library -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<!-- include tn3 plugin -->
+<script type="text/javascript" src="./wp-content/themes/Grace/library/tn3/js/jquery.tn3lite.min.js"></script>
+
+<!--  initialize the TN3 when the DOM is ready -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		//Thumbnailer.config.shaderOpacity = 1;
+		var tn1 = $('.mygallery').tn3({
+skinDir:"skins",
+imageClick:"fullscreen",
+image:{
+maxZoom:1.5,
+crop:true,
+clickEvent:"dblclick",
+transitions:[{
+type:"blinds"
+},{
+type:"grid"
+},{
+type:"grid",
+duration:460,
+easing:"easeInQuad",
+gridX:1,
+gridY:8,
+// flat, diagonal, circle, random
+sort:"random",
+sortReverse:false,
+diagonalStart:"bl",
+// fade, scale
+method:"scale",
+partDuration:360,
+partEasing:"easeOutSine",
+partDirection:"left"
+}]
+}
+		});
+	});
+</script>
+<?php } ?>
+
 </head>
 <body>
 <div id="page"  >
      <div  id="header">
      	<div class="container_12" >
-      <div class="h_left" id="logo-spot">
-        <?php if ( get_option('bizzthemes_show_blog_title') ) { ?>
-        <div class="blog-title"><a href="<?php echo get_option('home'); ?>/">
-          <?php bloginfo('name'); ?>
-          </a></div>
-        <div class="blog-description">
-          <?php bloginfo('description'); ?>
+            <img src="http://localhost/Guadalupe/wp-content/uploads/2012/01/Banner-principal-Parroquia.jpg" alt="Parroquia de Guadalupe" />
         </div>
-        <?php } else { ?>
-        <h1 class="logo"> <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"> <img src="<?php if ( get_option('bizzthemes_logo_url') <> "" ) { echo get_option('bizzthemes_logo_url'); } else { echo get_bloginfo('template_directory').'/images/logo.png'; } ?>" alt="<?php bloginfo('name'); ?>" /> </a> </h1>
-        <!--/logo-->
-        <?php } ?>
-      </div>
-      <!--/logo-spot-->
-      
-        <p class="slogan"><?php bloginfo('description'); ?> </p>
-      
-       
-     </div>
-  </div>
+    </div>
   <!-- header  #end -->
   <?php
 		global $wpdb;

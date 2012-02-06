@@ -67,12 +67,12 @@ h1.logo { position: relative; display: block; font-size:18px; padding:28px 0 20p
 /*---------TOP NAVIGATION for PAGES---------  */
 #nav-menu ul { margin:10px 0 0 0; padding:0px; height:35px; clear:both; width:940px; margin:0 auto;  }
   #nav-menu li { float:left; list-style-type:none; margin:0px 4px 0px 0px; overflow:hidden; line-height:17px;   }
-    #nav-menu ul li:hover a, #nav-menu ul li.hover a, #nav-menu ul li.current_page_item a { text-decoration:none;  color:#eceadb; background:#222623 url(1-default/buttonbg.png) right top; 
+    #nav-menu ul li:hover a, #nav-menu ul li.hover a, #nav-menu ul li.current_page_item a { text-decoration:none;  color:#eceadb; background:#222623;
 	padding:12px 12px 20px 8px 12px; }
     #nav-menu ul li a { font:normal 18px Georgia, "Times New Roman", Times, serif; text-decoration:none; display:block; margin:0px 5px 0px 0; padding:12px 20px 8px 20px; color:#333 }
     #nav-menu ul li a:hover { text-decoration:none; color:#eceadb;  background:#222623 url(1-default/buttonbg.png) right top;   }
 
-	#nav-menu ul li:hover a, #nav-menu ul li.hover a, #nav-menu ul li.current-cat a { text-decoration:none;  color:#eceadb; background:#222623 url(1-default/buttonbg.png) right top; 
+	#nav-menu ul li:hover a, #nav-menu ul li.hover a, #nav-menu ul li.current-cat a { text-decoration:none;  color:#eceadb; background:#222623;
 	padding:12px 12px 20px 8px 12px; }
 	
 	

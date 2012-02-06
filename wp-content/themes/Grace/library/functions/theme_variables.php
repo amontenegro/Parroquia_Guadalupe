@@ -15,5 +15,7 @@ $bloghomeurl = "".trailingslashit( get_bloginfo('url') )."";
   $includes_path = TEMPLATEPATH . '/library/includes/';
   $javascript_path = TEMPLATEPATH . '/library/js/';
   $css_path = TEMPLATEPATH . '/library/css/';
+  $tn3_path = TEMPLATEPATH . '/library/tn3/';
+  $tn3_css = TEMPLATEPATH . '/library/tn3/skins/tn3/tn3.css';
 
 ?>

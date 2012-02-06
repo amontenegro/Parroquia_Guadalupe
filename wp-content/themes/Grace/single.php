@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<!-- SINGLE PAGE -->
 <div class="breadcrumb_top ">
 	<div class="breadcrumb_bottom container_12">
     	 <h1> <?php the_title(); ?> </h1>
@@ -34,24 +34,79 @@
           </div>
         </div>
       </div>
-      <!-- posttop #end -->
+
+
+
+
+
+
+
+
+
+
+
+        <!-- posttop #end -->
       <div class="post_content">
 
         <?php if ( get_post_meta($post->ID,'image', true) ) { ?>
             <div class="post_img clearfix">
-                <img src="<?php echo get_post_meta($post->ID, "image"); ?>" alt="<?php the_title(); ?>" class="fl"/>
+                <img src="<?php echo get_post_meta($post->ID, "image", true); ?>" alt="<?php the_title(); ?>" class="fl"/>
             </div>
          <?php } ?>
         
-         
+         <!-- The content -->
         <?php the_content(); ?>
-        
-        
+        <!-- End the content -->
+
+
+          <div id="image_carousel">
+            <?php
+                $uploads = wp_upload_dir();
+                //print each file name
+
+
+                if(get_post_meta($post->ID, "image_folder", true)){
+                    //get all image files with a .jpg extension.
+                    $images = new DirectoryIterator($uploads['basedir'] . "/grupos_pastorales/" . get_post_meta($post->ID, "image_folder", true));
+
+                    if(count($images) > 0){
+                        echo "<div id=\"carousel_content\">";
+                        echo "<div class=\"mygallery\">";
+                        echo "<div class=\"tn3 album\">";
+                        echo "<div class=\"tn3 thumb\"></div>";
+                        echo "<ol>";
+                        foreach($images as $image)
+                        {
+                            if(!$image->isDot()){
+                                echo "<li>";
+                                echo "<a href=\"./wp-content/uploads/grupos_pastorales/kyriacos/" . $image . "\">";
+                                echo "<img src=\"./wp-content/uploads/grupos_pastorales/kyriacos/" . $image . "\" />";
+                                echo "</a>";
+                                echo "</li>";
+
+                                echo $image;
+                            }
+                        }
+                        echo "</ol>";
+                        echo "</div>";
+                        echo "</div>";
+                        echo "</div>";
+                    }
+                }
+            ?>
+        </div>
+
         <?php if (get_post_meta($post->ID, "time", true)) { ?>
           <p class="event_time"><b>Event Time Schedule :</b> <?php echo get_post_meta($post->ID, "time", true); ?> </p>
           <?php } ?>
         
       </div>
+
+
+
+
+
+
     </div>
     <!--/posts-->
     
@@ -71,6 +126,7 @@
     <?php endif; ?>
   </div>
   <!--/content -->
+
   <?php get_sidebar(); ?>
 </div>
 <!--/container_12 -->

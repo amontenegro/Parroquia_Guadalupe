@@ -17,9 +17,19 @@ h1 {
 h2 {
 	font-size:24px
 }
+
+.textwidget h2 {
+    font-size: 20px;
+}
+
 h3 {
 	font-size:22px
 }
+
+.textwidget h3 {
+    font-size: 16px;
+}
+
 h4 {
 	font-size:19px
 }

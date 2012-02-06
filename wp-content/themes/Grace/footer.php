@@ -5,9 +5,8 @@
     <div class="copyright">
       <p class="fl">&copy;
         <?php the_time('Y'); ?>
-        <?php bloginfo(); ?>, All right reserved.
+        <?php bloginfo(); ?>, todos los derechos reservados.
         <br/>
-       <span class="designby"> Grace Theme by </span>  <span class="templatic"> <a href="http://templatic.com" title="templatic.com">templatic.com</a> </span> </p>
       <div class="fr">
         <?php if ( get_option('bizzthemes_footpages') <> "" ) { ?>
         <ul>
