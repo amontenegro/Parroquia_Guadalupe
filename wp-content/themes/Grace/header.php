@@ -75,11 +75,11 @@ Author Archives&nbsp;|&nbsp;
 
 <?php if ( is_single() ) { ?>
 <!-- include CSS always before including js -->
-<link rel="stylesheet" type="text/css" href="./wp-content/themes/Grace/library/tn3/skins/tn3/tn3.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://www.parroquiadeguadalupe.net/wp-content/themes/Grace/library/tn3/skins/tn3/tn3.css" media="screen" />
 <!-- include jQuery library -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 <!-- include tn3 plugin -->
-<script type="text/javascript" src="./wp-content/themes/Grace/library/tn3/js/jquery.tn3lite.min.js"></script>
+<script type="text/javascript" src="http://www.parroquiadeguadalupe.net/wp-content/themes/Grace/library/tn3/js/jquery.tn3lite.min.js"></script>
 
 <!--  initialize the TN3 when the DOM is ready -->
 <script type="text/javascript">
@@ -123,7 +123,7 @@ partDirection:"left"
 <div id="page"  >
      <div  id="header">
      	<div class="container_12" >
-            <img src="http://localhost/Guadalupe/wp-content/uploads/2012/01/Banner-principal-Parroquia.jpg" alt="Parroquia de Guadalupe" />
+            <img src="http://www.parroquiadeguadalupe.net/wp-content/uploads/2012/01/Banner-principal-Parroquia.jpg" alt="Parroquia de Guadalupe" />
         </div>
     </div>
   <!-- header  #end -->

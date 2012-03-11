@@ -35,16 +35,6 @@
         </div>
       </div>
 
-
-
-
-
-
-
-
-
-
-
         <!-- posttop #end -->
       <div class="post_content">
 
@@ -57,8 +47,6 @@
          <!-- The content -->
         <?php the_content(); ?>
         <!-- End the content -->
-
-
           <div id="image_carousel">
             <?php
                 $uploads = wp_upload_dir();
@@ -67,7 +55,8 @@
 
                 if(get_post_meta($post->ID, "image_folder", true)){
                     //get all image files with a .jpg extension.
-                    $images = new DirectoryIterator($uploads['basedir'] . "/grupos_pastorales/" . get_post_meta($post->ID, "image_folder", true));
+                    $imageFolder = get_post_meta($post->ID, "image_folder", true);
+                    $images = new DirectoryIterator($uploads['basedir'] . "/grupos_pastorales/" . $imageFolder);
 
                     if(count($images) > 0){
                         echo "<div id=\"carousel_content\">";
@@ -79,8 +68,8 @@
                         {
                             if(!$image->isDot()){
                                 echo "<li>";
-                                echo "<a href=\"./wp-content/uploads/grupos_pastorales/kyriacos/" . $image . "\">";
-                                echo "<img src=\"./wp-content/uploads/grupos_pastorales/kyriacos/" . $image . "\" />";
+                                echo "<a href=\"http://www.parroquiadeguadalupe.net/wp-content/uploads/grupos_pastorales/".$imageFolder."/" . $image . "\">";
+                                echo "<img src=\"http://www.parroquiadeguadalupe.net/wp-content/uploads/grupos_pastorales/".$imageFolder."/" . $image . "\" />";
                                 echo "</a>";
                                 echo "</li>";
 
@@ -101,12 +90,6 @@
           <?php } ?>
         
       </div>
-
-
-
-
-
-
     </div>
     <!--/posts-->
     
