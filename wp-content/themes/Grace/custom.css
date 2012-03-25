@@ -12,3 +12,33 @@ following declarations to this file:
 	#header .blog-title a{ background:#cccccc }     <--- This makes blog title background grey
 
 */
+#sidebar #horarios h2 {
+    font-size: 16px;
+}
+#sidebar #horarios h3 {
+    font-size: 14px;
+    padding: 5px 0 5px;
+}
+#sidebar #horarios b{
+    padding: 5px 0 5px;
+}
+#content #semana_santa h1 {
+    padding: 25px 0px;
+}
+#semana_santa .date {
+    padding: 25px 0 10px 0;
+    font-size: 18px;
+    text-align: left;
+}
+#semana_santa th {
+    text-align: left;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #000000;
+}
+#semana_santa #actividades td {
+    padding-bottom: 5px;
+}
+.bold {
+    font-weight: bold;
+}

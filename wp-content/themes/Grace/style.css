@@ -27,6 +27,7 @@ Author URI:    http://templatic.com/
 /* Import GRID styling for grid framework*/
 @import url('skins/1-default.css');
 
+@import url('custom.css');
 #footer .designby { padding:5px 8px 0 0; float:left; }
 #footer p span.templatic { width:80px; display:block; overflow:hidden;  float:left;    color:#fff;  background:url(images/templatic.png) no-repeat 0;   }
 #footer p span.templatic a {  text-indent:-9009px; padding-left:120px; height:30px; display:block; }
